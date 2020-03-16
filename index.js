@@ -1,14 +1,13 @@
-//Orquestrador
-const readline = require("readline-sync");
+const robots = {
+  userInput: require("./robots/user-input.js"),
+  search: require("./robots/search.js")
+};
 
 function start() {
   const content = {};
 
-  content.searchTerm = askAndReturnSearchTerm();
-
-  function askAndReturnSearchTerm() {
-    return readline.question("Type the search term: ");
-  }
+  robots.userInput(content);
+  robots.search(content);
 
   console.log(content);
 }
