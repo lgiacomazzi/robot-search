@@ -1,10 +1,12 @@
 const readline = require("readline-sync");
 
 function robot(content) {
-  const linkedinUrl = "site: linkedin.com/company";
+  const linkedinUrl = "site: br.linkedin.com/company";
+
   content.searchIndustry = askAndReturnIndustry();
-  content.searchLocation = askAndReturnLocation();
+  content.searchLocation = "Brasil";
   content.searchSize = askAndReturnCompanySize();
+  createSearchTerm();
 
   function askAndReturnIndustry() {
     const industryPrefixes = [
@@ -104,11 +106,11 @@ function robot(content) {
     return selectedSize;
   }
 
-  content.searchTerm = `${linkedinUrl} + "${content.searchIndustry}" + "${
-    content.searchLocation
-  }" + "${content.searchSize}"`;
-
-  console.log(content.searchTerm);
+  function createSearchTerm() {
+    content.searchTerm = `${linkedinUrl} + "${content.searchIndustry}" + "${
+      content.searchLocation
+    }" + "${content.searchSize}"`;
+  }
 }
 
 module.exports = robot;
