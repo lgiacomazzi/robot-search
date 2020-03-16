@@ -16,5 +16,8 @@
     "url": "https://github.com/lgiacomazzi/robot-search/issues"
   },
   "homepage": "https://github.com/lgiacomazzi/robot-search#readme",
-  "keywords": []
+  "keywords": [],
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
 }
